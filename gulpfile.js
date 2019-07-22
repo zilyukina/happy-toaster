@@ -49,7 +49,7 @@ gulp.task('html', function(done) {
 gulp.task('css', function() {
     return concat({
 	    	'style.css': paths.src.css
-	    })
+		})
         .pipe(postcss([
         	simplevars,
         	nestedAncestors,
