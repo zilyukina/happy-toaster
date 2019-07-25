@@ -43,12 +43,22 @@ body {
 }
 .toaster {
     &-body {
-        background: #F62B41;
         width: 344px;
         height: 175px;
-        border-radius: 61px 61px 0 0;
-        box-shadow: 77px 0px 0 0px inset $-t-body-shadow;
         position: relative;
+
+        &-main {
+            background: #F62B41;
+            border-radius: 61px 61px 0 0;
+            box-shadow: 77px 0px 0 0px inset $-t-body-shadow;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform-origin: center bottom;
+            animation: body 2s linear;
+        }
     }
     &-bottom {
         position: relative;
@@ -263,4 +273,8 @@ body {
     background: $shadow;
     bottom: 0;
     left: 98px;
+}
+
+@keyframes body {
+
 }
