@@ -7,6 +7,8 @@ $black: #2B3335;
 $grey: #413239;
 $mouth-up: #7F1B33;
 $mouth-tongue: #C3004B;
+$t-handler-shadow: #9C0749;
+$shadow: #FD5274;
 
 body {
     margin: 0;
@@ -32,9 +34,11 @@ body {
         opacity: 0.3;
     }
     &-content{
-        width: 500px;
-        height:500px;
+        width: 370px;
+        height: 238px;
         z-index: 1;
+        position: relative;
+        padding: 0 150px;
     }
 }
 .toaster {
@@ -145,9 +149,118 @@ body {
         }
     }
     &-mouth-happy {
-        background: $mouth-up;
         width: 100px;
-        height: 20px;
-        border-radius: 10px;
+        height: 50px;
+        position: absolute;
+        top: 83px;
+        left: 65px;
+
+        &-main {
+            background: $mouth-up;
+            width: 76px;
+            height: 39px;
+            position: absolute;
+            left: 13px;
+            top: 5px;
+            border-radius: 9px 9px 45px 45px;
+            box-shadow: -3px 2px 0 0px $t-body-light-shadow;
+            overflow: hidden;
+
+            &:before {
+                content: '';
+                background: $mouth-tongue;
+                width: 61px;
+                height: 28px;
+                border-radius: 100%;
+                position: absolute;
+                left: 7px;
+                top: 20px;
+                z-index: 1;
+            }
+            &:after {
+                content: '';
+                background: $t-body;
+                width: 46px;
+                height: 28px;
+                border-radius: 100%;
+                position: absolute;
+                left: 15px;
+                top: -20px;
+                z-index: 1;
+            }
+        }
+
+        &-teeth {
+            position: relative;
+            top: 0;
+            height: 18px;
+
+            &:before,
+            &:after {
+                content: '';
+                background: $white;
+                position: absolute;
+                top: 0;
+                height: 16px;
+                width: 10px;
+                box-shadow: 3px 0 0 0px $white-shadow inset;
+                border-radius: 6px;
+            }
+
+            &:before {
+                left: 24px;
+            }
+            &:after {
+                right: 25px;
+            }
+        }
     }
+    &-switch {
+        position: absolute;
+        left: 8px;
+        width: 57px;
+        height: 123px;
+        top: 40px;
+
+        &-hole {
+            background: $t-handler-shadow;
+            position: absolute;
+            left: 17px;
+            top: 5px;
+            width: 16px;
+            height: 107px;
+            border-radius: 20px;
+
+            &:before {
+                content: '';
+                background:  $black;
+                position: absolute;
+                left: 8px;
+                top: 2px;
+                bottom: 1px;
+                width: 10px;
+                border-radius: 182px;
+            }
+        }
+
+        &-handler {
+            background: $white;
+            position: absolute;
+            top: 85px;
+            left: 6px;
+            width: 39px;
+            height: 20px;
+            border-radius: 4px;
+            box-shadow: -6px 0 0 0px $white-shadow inset;
+        }
+    }
+}
+.shadow {
+    position: absolute;
+    width: 437px;
+    height: 20px;
+    border-radius: 10px;
+    background: $shadow;
+    bottom: 0;
+    left: 98px;
 }
