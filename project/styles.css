@@ -128,16 +128,6 @@ body {
             -7px 4px 1px -3px $t-body-light-shadow;
         border-radius: 20px;
 
-        &:before {
-            content: '';
-            background: $t-body-light-shadow;
-            width: 17px;
-            height: 45px;
-            border-radius: 10px;
-            position: absolute;
-            top: 11px;
-            left: 9px;
-        }
         &:after{
             content: '';
             background: $black;
@@ -147,6 +137,8 @@ body {
             position: absolute;
             top: 11px;
             left: 9px;
+            transform-origin: left center;
+            animation: pupil 10s linear;
         }
         
         &--right {
@@ -194,6 +186,7 @@ body {
                 height: 28px;
                 border-radius: 100%;
                 position: absolute;
+                box-shadow: 0 0 2px 0 #F62B41;
                 left: 15px;
                 top: -20px;
                 z-index: 1;
@@ -278,3 +271,64 @@ body {
 @keyframes body {
 
 }
+@keyframes pupil {
+    0% {
+        transform: scaleX(1);
+    }
+    1.6% {
+        transform: scaleX(1);
+    }
+    2.5% {
+        transform: scaleX(1.4);
+    }
+    4.1% {
+        transform: scaleX(1) translateX(7px);
+    }
+    8.75% {
+        transform: scaleX(1) translateX(7px);
+    }
+    8.75% {
+        transform: scaleX(1) translateX(7px);
+    }
+    9.25% {
+        transform: scaleX(1.4) translateX(0)
+    }
+    11.25% {
+        transform: scaleX(1) translateX(0)
+    }
+    65% {
+        transform: scaleX(1) translateX(0)
+    }
+    65.8% {
+        transform: scaleY(1.2) translateY(-6px);
+    }
+    66.6% {
+        transform: scaleY(1) translateY(-11px);
+    }
+    72% {
+        transform: scaleY(1) translateY(-11px);
+    }
+    65.8% {
+        transform: scaleY(1.2) translateY(-6px);
+    }
+    72.9% {
+        transform: scaleY(1.2) translateY(-6px);
+    }
+    75% {
+        transform: scaleY(1) translateX(0)
+    }
+    100% {
+        transform: scaleX(1) translateX(0)
+    }
+
+}
+
+/*@keyframes eyes {
+    0% {
+
+    }
+    20.41% {
+
+    }
+    0.8
+}*/
