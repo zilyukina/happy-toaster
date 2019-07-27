@@ -14,8 +14,15 @@ $mouth-tongue: #C3004B;
 $t-handler-shadow: #9C0749;
 $shadow: #FD5274;
 $blush: #C50B22;
+$bread: #FFB071;
+$bread-pic: #DC8341;
+$bread-shadow: #B65119;
+$bread-bubbles:#FBA45F;
+$bread-bubbles-shadow:#EE9050;
 $animation-timing: 7s;
 $animation-timing-function: infinite;
+
+/*TODO: ref animation pointers*/
 
 body {
     margin: 0;
@@ -28,9 +35,6 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(to top,#FF6B89 ,#FE6986);
-
-    width: 720px;
-    height: 540px;
 
     &:before {
         content: '';
@@ -52,6 +56,7 @@ body {
     }
 }
 .toaster {
+    display: none;
     animation: shaking $animation-timing $animation-timing-function;
     &-body {
         width: 344px;
@@ -323,7 +328,7 @@ body {
                 left: 15px;
                 top: -20px;
                 z-index: 1;
-                box-shadow: 0 0 2px 0 solid $t-body;
+                box-shadow: 0 0 2px 0 $t-body;
                 animation: mouth-upper-color $animation-timing $animation-timing-function
             }
         }
@@ -405,7 +410,199 @@ body {
     bottom: 0;
     left: 98px;
 }
+.bread {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: $bread;
+    width: 97px;
+    height: 94px;
+    border-radius: 20px;
+    box-shadow: -10px 0 0 0 $bread-shadow;
 
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        background:  $bread;
+        top: 0;
+        bottom: 0;
+        border-radius: 10px;
+    }
+    &:before {
+        left: -1px;
+        transform: skewX(-4deg);
+        box-shadow: -10px 0 0 0 #b65119;
+    }
+    &:after{
+        right: -1px;
+        transform: skewX(4deg);
+    }
+
+    &--heart {
+        .bread-bubbles {
+            &--1 {
+                top: -12px;
+                left: 2px;
+                width: 18px;
+                height: 18px;
+                box-shadow: inset 4px -3px 0 0 $bread-bubbles-shadow;
+
+                &:before {
+                    top: -3px;
+                    left: 46px;
+                    width: 10px;
+                    height: 10px;
+                    box-shadow: inset 2px -1px 0 0 $bread-bubbles-shadow; 
+                }
+                &:after{
+                    left: 11px;
+                    top: 79px;
+                    width: 8px;
+                    height: 8px;
+                    box-shadow: inset 2px -1px 0 0 $bread-bubbles-shadow;
+                }
+            }
+
+            &--2 {
+                top: 62px;
+                left: 79px;
+                width: 12px;
+                height: 12px;
+                box-shadow: inset 4px -3px 0 0 $bread-bubbles-shadow;
+
+                &:before {
+                    top: -29px;
+                    left: -40px;
+                    width: 14px;
+                    height: 14px;
+                    box-shadow: inset 2px -1px 0 0 $bread-bubbles-shadow; 
+                }
+                &:after{
+                    left: -15px;
+                    top: -38px;
+                    width: 8px;
+                    height: 8px;
+                    box-shadow: inset 2px -1px 0 0 $bread-bubbles-shadow;
+                }
+            }
+
+            &--3 {
+                top: 62px;
+                left: 79px;
+                width: 13px;
+                height: 12px;
+                z-index: 1;
+                box-shadow: inset 4px -3px 0 0 $bread-bubbles-shadow;
+            }
+        }
+    }
+
+    &--ball {
+        left: 400px;
+        .bread-bubbles {
+            width: 20px;
+            height: 20px;
+            box-shadow: inset 4px -3px 0 0 $bread-bubbles-shadow;
+
+            &:before {
+                top: -12px;
+                left: 15px;
+                width: 10px;
+                height: 10px;
+                box-shadow: inset 2px -1px 0 0 $bread-bubbles-shadow; 
+            }
+            &:after{
+                left: 88px;
+                top: 7px;
+                width: 8px;
+                height: 8px;
+                box-shadow: inset 2px -1px 0 0 $bread-bubbles-shadow;
+            }
+        }
+    }
+
+    &-bubbles {
+        position: absolute;
+        background: $bread-bubbles;
+        border-radius: 100%;
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            border-radius: 100%;
+            background: inherit;
+            z-index: 1;
+        }
+    }
+
+    &-upper{
+        left: -14px;
+        right: -14px;
+        top: -20px;
+        height: 66px;
+        position: absolute;
+        border-radius: 42px;
+        box-shadow: -10px 0 0 0 #b65119;
+        background: $bread;
+
+        &:before {
+            content: '';
+            background: $bread;
+            position: absolute;
+            bottom: 0;
+            left: 13px;
+            right: 13px;
+            height: 10px;
+        }
+    }
+    &-pic-ball{
+        border: 6px solid $bread-pic;
+        width: 61px;
+        height: 60px;
+        border-radius: 100%;
+        position: absolute;
+        top: 4px;
+        left: 13px;
+        z-index: 1;
+        overflow: hidden;
+
+        &-inner {
+            border: 6px solid $bread-pic;
+            content: '';
+            width: 203px;
+            height: 203px;
+            top: -38px;
+            left: -165px;
+            border-radius: 100%;
+            position: absolute;
+        }
+
+        &:before {
+            content: '';
+            transform: rotate(-28deg);
+            border: 6px solid $bread-pic;
+            width: 83px;
+            height: 58px;
+            position: absolute;
+            top: -46px;
+            left: -25px;
+            border-radius: 100%;
+        }
+        &:after{
+            content: "";
+            width: 83px;
+            height: 76px;
+            top: 30px;
+            left: 2px;
+            border: 6px solid $bread-pic;
+            position: absolute;
+            border-radius: 100%;
+        }
+    }
+}
 @keyframes body {
     0% {
         transform: scaleX(1);
@@ -414,31 +611,31 @@ body {
         transform: scaleX(1);
     }
     25.4% {
-        transform: scaley(1.03);
+        transform: scaleY(1.03);
     }
     27.9% {
-        transform: scaley(0.9);
+        transform: scaleY(0.9);
     }
     46.6% {
-        transform: scaley(0.9);
+        transform: scaleY(0.9);
     }
     48.75% {
-        transform: scaley(0.81);
+        transform: scaleY(0.81);
     }
     49.75% {
-        transform: scaley(0.81);
+        transform: scaleY(0.81);
     }
     52% {
-        transform: scaley(1.14);
+        transform: scaleY(1.14);
     }
     55% {
-        transform: scaley(0.88);
+        transform: scaleY(0.88);
     }
     57% {
-        transform: scaley(1);
+        transform: scaleY(1) scaleX(1);
     }
     100% {
-        transform: scaley(1);
+        transform: scaleY(1) scaleX(1);
     }
 
 }
@@ -464,19 +661,19 @@ body {
 @keyframes mouth-upper-color {
     0% {
         background: $t-body;
-        box-shadow: 0 0 2px 0 solid $t-body;
+        box-shadow: 0 0 1px 0 $t-body;
     }
     35% {
         background: $t-body;
-        box-shadow: 0 0 2px 0 solid $t-body;
+        box-shadow: 0 0 1px 0 $t-body;
     }
     51.6% {
         background: $t-body-dark;
-        box-shadow: 0 0 2px 0 solid $t-body-dark;
+        box-shadow: 0 0 1px 0 $t-body-dark;
     }
     61.25% {
         background: $t-body;
-        box-shadow: 0 0 2px 0 solid $t-body;
+        box-shadow: 0 0 1px 0 $t-body;
     }
 
 }
@@ -804,10 +1001,10 @@ body {
         transform: translateY(-1px) rotate(1deg)
     }
     62.68% {
-        transform: translateY(0x) rotate(0)
+        transform: translateY(0) rotate(0)
     }
     100% {
-        transform: translateY(0x) rotate(0)
+        transform: translateY(0) rotate(0)
     }
 
 }

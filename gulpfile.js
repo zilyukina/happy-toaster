@@ -8,6 +8,7 @@ let gulp            = require('gulp'),
 	nestedAncestors = require('postcss-nested-ancestors'),
 	autoprefixer    = require('autoprefixer'),
 	csscomment      = require('postcss-inline-comment'),
+	cssnano         = require('cssnano'),
 	simplevars      = require('postcss-simple-vars');
 
 let paths = {
@@ -51,13 +52,14 @@ gulp.task('css', function() {
 	    	'style.css': paths.src.css
 		})
         .pipe(postcss([
+			csscomment,
         	simplevars,
         	nestedAncestors,
         	nested,
-            csscomment,
-			autoprefixer()
+			autoprefixer(),
+			cssnano()
         ]))
-        	.on('error', console.log)
+        .on('error', console.log)
     	.pipe(gulp.dest(paths.dist.css))
         .pipe(browserSync.stream());
 
