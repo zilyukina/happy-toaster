@@ -497,6 +497,16 @@ body {
                 box-shadow: inset 4px -3px 0 0 $bread-bubbles-shadow;
             }
         }
+        .bread-pic {
+            position: absolute;
+            z-index: 1;
+
+            &--right {
+                transform: scaleX(-1);
+                left: 101px;
+            }
+        }
+        
     }
 
     &--ball {
@@ -558,6 +568,7 @@ body {
             height: 10px;
         }
     }
+
     &-pic-ball{
         border: 6px solid $bread-pic;
         width: 61px;
@@ -601,6 +612,32 @@ body {
             position: absolute;
             border-radius: 100%;
         }
+    }
+    &-pic-heart {
+        border: 6px solid transparent;
+        width: 33px;
+        height: 33px;
+        border-radius: 100%;
+        position: absolute;
+        top: 9px;
+        left: 14px;
+        z-index: 1;
+        border-top-color: $bread-pic;
+        border-right-color: $bread-pic;
+        transform: rotate(-81deg) skew(-11deg, 0deg);
+
+        &:after {
+            content: "";
+            width: 34px;
+            height: 6px;
+            background: $bread-pic;
+            position: absolute;
+            top: 15px;
+            left: -17px;
+            transform: rotate(-82deg);
+        }
+
+      
     }
 }
 @keyframes body {
