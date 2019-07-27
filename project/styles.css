@@ -1,5 +1,7 @@
 $t-body: #F62B41;
-$-t-body-shadow: #C20049;
+$t-body-dark: #DC0C24;
+$t-body-shadow: #C20049;
+$t-body-shadow-dark: #9C0030;
 $t-body-light-shadow: #C4303E;
 $white: #ffffff;
 $white-shadow: #DFAFBF;
@@ -9,6 +11,7 @@ $mouth-up: #7F1B33;
 $mouth-tongue: #C3004B;
 $t-handler-shadow: #9C0749;
 $shadow: #FD5274;
+$animation-timing: 7s;
 
 body {
     margin: 0;
@@ -21,6 +24,9 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(to top,#FF6B89 ,#FE6986);
+
+    width: 720px;
+    height: 540px;
 
     &:before {
         content: '';
@@ -42,6 +48,7 @@ body {
     }
 }
 .toaster {
+    animation: shaking $animation-timing linear;
     &-body {
         width: 344px;
         height: 175px;
@@ -50,14 +57,15 @@ body {
         &-main {
             background: #F62B41;
             border-radius: 61px 61px 0 0;
-            box-shadow: 77px 0px 0 0px inset $-t-body-shadow;
+            box-shadow: 77px 0px 0 0px inset $t-body-shadow;
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
             transform-origin: center bottom;
-            animation: body 2s linear;
+            animation: body $animation-timing linear,
+                body-color $animation-timing linear;
         }
     }
     &-bottom {
@@ -127,6 +135,7 @@ body {
         box-shadow: 3px -2px 0 0px $white-shadow inset, 
             -7px 4px 1px -3px $t-body-light-shadow;
         border-radius: 20px;
+        animation: eyes $animation-timing linear;
 
         &:after{
             content: '';
@@ -138,7 +147,7 @@ body {
             top: 11px;
             left: 9px;
             transform-origin: left center;
-            animation: pupil 10s linear;
+            animation: pupil $animation-timing linear;
         }
         
         &--right {
@@ -269,6 +278,59 @@ body {
 }
 
 @keyframes body {
+    0% {
+        transform: scaleX(1);
+    }
+    22.9% {
+        transform: scaleX(1);
+    }
+    25.4% {
+        transform: scaley(1.03);
+    }
+    27.9% {
+        transform: scaley(0.9);
+    }
+    46.6% {
+        transform: scaley(0.9);
+    }
+    48.75% {
+        transform: scaley(0.81);
+    }
+    49.75% {
+        transform: scaley(0.81);
+    }
+    52% {
+        transform: scaley(1.14);
+    }
+    55% {
+        transform: scaley(0.88);
+    }
+    57% {
+        transform: scaley(1);
+    }
+    100% {
+        transform: scaley(1);
+    }
+
+}
+
+@keyframes body-color {
+    0% {
+        background: $t-body;
+        box-shadow: 77px 0px 0 0px inset $t-body-shadow;
+    }
+    35% {
+        background: $t-body;
+        box-shadow: 77px 0px 0 0px inset $t-body-shadow;
+    }
+    51.6% {
+        background: $t-body-dark;
+        box-shadow: 77px 0px 0 0px inset $t-body-shadow-dark;
+    }
+    61.25% {
+        background: $t-body;
+        box-shadow: 77px 0px 0 0px inset $t-body-shadow;
+    }
 
 }
 @keyframes pupil {
@@ -320,15 +382,78 @@ body {
     100% {
         transform: scaleX(1) translateX(0)
     }
-
 }
 
-/*@keyframes eyes {
+@keyframes eyes {
     0% {
-
+        transform: scaleY(1)
     }
     20.41% {
-
+        transform: scaleY(1)
     }
-    0.8
-}*/
+    22.5% {
+        transform: scaleY(0.8)
+    }
+    51.25% {
+        transform: scaleY(1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+@keyframes shaking {
+    /*0% {
+        transform: translateX(0);
+    }
+    35% {
+        transform: translateX(0);
+    }
+    35.41% {
+        transform: translateX(9px);
+    }
+    36% {
+        transform: translateX(0);
+    }
+    38% {
+        transform: translateX(0);
+    }
+    38.41% {
+        transform: translateX(-9px);
+    }
+    39% {
+        transform: translateX(0);
+    }
+
+    43% {
+        transform: translateX(-9px);
+    }
+    44.5% {
+        transform: translateX(9px);
+    }
+    45.5% {
+        transform: translateX(-9px);
+    }
+    47% {
+        transform: translateX(9px);
+    }
+    48% {
+        transform: translateX(0);
+    }
+    51% {
+        transform: translateX(0);
+    }
+    53.3% {
+        transform: translateY(20px);
+    }
+    54.16% {
+        transform: translateY(20px);
+    }
+    56.25% {
+        transform: translateY(0);
+    }
+    56.6% {
+        transform: translateY(0);
+    }
+*/
+}
