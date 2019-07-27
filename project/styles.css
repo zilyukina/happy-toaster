@@ -19,10 +19,8 @@ $bread-pic: #DC8341;
 $bread-shadow: #B65119;
 $bread-bubbles:#FBA45F;
 $bread-bubbles-shadow:#EE9050;
-$animation-timing: 7s;
+$animation-timing: 8s;
 $animation-timing-function: infinite;
-
-/*TODO: ref animation pointers*/
 
 body {
     margin: 0;
@@ -441,6 +439,9 @@ body {
         transform: skewX(4deg);
     }
     &--heart {
+        left: 229px;
+        top: 76px;
+        animation: bread-heart $animation-timing $animation-timing-function;
         .bread-bubbles {
             &--1 {
                 top: -12px;
@@ -1127,7 +1128,29 @@ body {
     81% {
         transform: translateY(-79px) scaleY(1.3)
     }
-    100% {
+    93% {
         transform: translateY(-50px) scaleY(1)
+    }
+}
+
+@keyframes bread-heart {
+    0%,
+    54%, 
+    100% {
+        transform: translateY(-24px) scaleY(1)
+    }
+    57% {
+        transform: scaleY(1.2) translateY(-154px)
+    }
+    59.16%,
+    60.41% {
+        transform: scaleY(0.9) translateY(-262px)
+    }
+    68%,
+    82% {
+        transform: scaleY(1.2) translateY(-70px)
+    }
+    93% {
+        transform: scaleY(1.2) translateY(-30px)
     }
 }
