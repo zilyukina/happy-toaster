@@ -702,59 +702,114 @@ body {
 }
 
 @keyframes shaking {
-    /*0% {
-        transform: translateX(0);
+    0% {
+        transform: translateX(0)
     }
     35% {
-        transform: translateX(0);
+        transform: translateX(0)
     }
-    35.41% {
-        transform: translateX(9px);
+    35.4% {
+        transform: translateX(-5px)
     }
-    36% {
-        transform: translateX(0);
+    36.6% {
+        transform: translateX(0)
     }
-    38% {
-        transform: translateX(0);
+    37% {
+        transform: translateX(5px)
     }
-    38.41% {
-        transform: translateX(-9px);
-    }
-    39% {
-        transform: translateX(0);
+    37.5% {
+        transform: translateX(0)
     }
 
-    43% {
-        transform: translateX(-9px);
+    39% {
+        transform: translateX(0)
     }
-    44.5% {
-        transform: translateX(9px);
+    39.6% {
+        transform: translateX(-5px)
     }
-    45.5% {
-        transform: translateX(-9px);
+    40% {
+        transform: translateX(0)
     }
-    47% {
-        transform: translateX(9px);
+    41.5% {
+        transform: translateX(5px)
     }
+    42% {
+        transform: translateX(0)
+    }
+
+
+    43.5% {
+        transform: translateX(0)
+    }
+    44% {
+        transform: translateX(-5px)
+    }
+    44.6% {
+        transform: translateX(0)
+    }
+    45% {
+        transform: translateX(5px)
+    }
+    45.6% {
+        transform: translateX(0)
+    }
+
+
     48% {
-        transform: translateX(0);
+        transform: translateX(0)
     }
+    48.5% {
+        transform: translateX(-5px)
+    }
+    49% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(5px)
+    }
+    50.6% {
+        transform: translateX(0)
+    }
+
+
     51% {
-        transform: translateX(0);
+        transform: translateX(0) 
     }
-    53.3% {
-        transform: translateY(20px);
+    
+    54% {
+        transform: translateY(-62px);
     }
-    54.16% {
-        transform: translateY(20px);
+    55% {
+        transform: translateY(-62px);
     }
     56.25% {
         transform: translateY(0);
     }
-    56.6% {
-        transform: translateY(0);
+    57.08% {
+        transform: translateY(-8px);
     }
-*/
+    57.68% {
+        transform: translateY(-8px) rotate(-2deg);
+    }
+    58.3% {
+        transform: translateY(-3px) rotate(-3deg);
+    }
+    60% {
+        transform: translateY(0) rotate(0);
+    }
+    61.25% {
+        transform: translateY(-3px) rotate(2deg)
+    }
+    62.08% {
+        transform: translateY(-1px) rotate(1deg)
+    }
+    62.68% {
+        transform: translateY(0x) rotate(0)
+    }
+    100% {
+        transform: translateY(0x) rotate(0)
+    }
+
 }
 
 @keyframes switch {
