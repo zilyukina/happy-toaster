@@ -123,6 +123,7 @@ body {
             position: absolute;
             width: 100%;
             height: 100%;  
+            animation: face-happy $animation-timing linear;
         }
        
     }
@@ -233,6 +234,7 @@ body {
         width: 57px;
         height: 123px;
         top: 40px;
+        animation: handler $animation-timing linear;
 
         &-hole {
             background: $t-handler-shadow;
@@ -401,7 +403,27 @@ body {
         transform: scaleY(1)
     }
 }
-
+@keyframes face-happy {
+    22.9% {
+        opacity: 1;
+    }
+    23% {
+        opacity: 0;  
+    }
+    51% {
+        opacity: 0;  
+    }
+    51.51% {
+        opacity: 1;  
+        transform: scaleY(1);
+    }
+    52.08% {
+        transform: scaleY(1.4);
+    }
+    54.58% {
+        transform: scaleY(1);
+    }
+}
 @keyframes shaking {
     /*0% {
         transform: translateX(0);
@@ -456,4 +478,43 @@ body {
         transform: translateY(0);
     }
 */
+}
+
+@keyframes handler {
+    0% {
+        transform: scaleY(1);
+    }
+    22.9% {
+        transform: scaleY(1);
+    }
+    25.41% {
+        transform: scaleY(1.05);
+    }
+    25.8% {
+        transform: scaleY(1.05);
+    }
+    27.91% {
+        transform: scaleY(0.9);
+    }
+    46.6% {
+        transform: scaleY(0.9);
+    }
+    48.7% {
+        transform: scaleY(0.8);
+    }
+    53.3% {
+        transform: scaleY(1.1);
+    }
+    55.41% {
+        transform: scaleY(1);
+    }
+    56.41% {
+        transform: scaleY(1.05);
+    }
+    57% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(1);
+    }
 }
