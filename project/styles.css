@@ -305,6 +305,7 @@ body {
             border-radius: 9px 9px 45px 45px;
             box-shadow: -3px 2px 0 0px $t-body-light-shadow;
             overflow: hidden;
+            z-index: 1;
 
             &:before {
                 content: '';
