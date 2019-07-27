@@ -57,6 +57,7 @@ body {
     z-index: 1;
     position: relative;
     animation: shaking $animation-timing $animation-timing-function;
+
     &-body {
         width: 344px;
         height: 175px;
@@ -187,7 +188,6 @@ body {
             background: $black;
             position: absolute;
             border-radius: 20px;
-           
             top: 25px;
         }
         &:after {
@@ -442,6 +442,7 @@ body {
         left: 229px;
         top: 76px;
         animation: bread-heart $animation-timing $animation-timing-function;
+
         .bread-bubbles {
             &--1 {
                 top: -12px;
@@ -550,7 +551,6 @@ body {
             z-index: 1;
         }
     }
-
     &-upper{
         left: -14px;
         right: -14px;
@@ -593,7 +593,6 @@ body {
             border-radius: 100%;
             position: absolute;
         }
-
         &:before {
             content: '';
             transform: rotate(-28deg);
@@ -642,24 +641,18 @@ body {
     }
 }
 @keyframes body {
-    0% {
-        transform: scaleX(1);
-    }
-    22.9% {
+    0%,  
+    22.9%  {
         transform: scaleX(1);
     }
     25.4% {
         transform: scaleY(1.03);
     }
-    27.9% {
+    27.9%,
+    46.6%  {
         transform: scaleY(0.9);
     }
-    46.6% {
-        transform: scaleY(0.9);
-    }
-    48.75% {
-        transform: scaleY(0.81);
-    }
+    48.75%,
     49.75% {
         transform: scaleY(0.81);
     }
@@ -669,21 +662,15 @@ body {
     55% {
         transform: scaleY(0.88);
     }
-    57% {
-        transform: scaleY(1) scaleX(1);
-    }
+    57%,
     100% {
         transform: scaleY(1) scaleX(1);
     }
-
 }
-
 @keyframes body-color {
-    0% {
-        background: $t-body;
-        box-shadow: 77px 0px 0 0px inset $t-body-shadow;
-    }
-    35% {
+    0%,
+    35%,
+    61.25%  {
         background: $t-body;
         box-shadow: 77px 0px 0 0px inset $t-body-shadow;
     }
@@ -691,17 +678,11 @@ body {
         background: $t-body-dark;
         box-shadow: 77px 0px 0 0px inset $t-body-shadow-dark;
     }
-    61.25% {
-        background: $t-body;
-        box-shadow: 77px 0px 0 0px inset $t-body-shadow;
-    }
 }
 @keyframes mouth-upper-color {
-    0% {
-        background: $t-body;
-        box-shadow: 0 0 1px 0 $t-body;
-    }
-    35% {
+    0%,
+    35%,
+    61.25% {
         background: $t-body;
         box-shadow: 0 0 1px 0 $t-body;
     }
@@ -709,88 +690,59 @@ body {
         background: $t-body-dark;
         box-shadow: 0 0 1px 0 $t-body-dark;
     }
-    61.25% {
-        background: $t-body;
-        box-shadow: 0 0 1px 0 $t-body;
-    }
-
 }
 @keyframes pupil {
-    0% {
-        transform: scaleX(1);
-    }
+    0%,
     1.6% {
         transform: scaleX(1);
     }
     2.5% {
         transform: scaleX(1.4);
     }
-    4.1% {
-        transform: scaleX(1) translateX(7px);
-    }
-    8.75% {
-        transform: scaleX(1) translateX(7px);
-    }
+    4.1%,
     8.75% {
         transform: scaleX(1) translateX(7px);
     }
     9.25% {
         transform: scaleX(1.4) translateX(0)
     }
-    11.25% {
-        transform: scaleX(1) translateX(0)
-    }
+    11.25%,
     65% {
         transform: scaleX(1) translateX(0)
     }
     65.8% {
         transform: scaleY(1.2) translateY(-6px);
     }
-    66.6% {
-        transform: scaleY(1) translateY(-11px);
-    }
+    66.6%,
     72% {
         transform: scaleY(1) translateY(-11px);
     }
-    65.8% {
-        transform: scaleY(1.2) translateY(-6px);
-    }
+    65.8%,
     72.9% {
         transform: scaleY(1.2) translateY(-6px);
     }
-    75% {
+    75%,
+    100% {
         transform: scaleY(1) translateX(0)
     }
-    100% {
-        transform: scaleX(1) translateX(0)
-    }
 }
-
 @keyframes eyes {
-    0% {
-        transform: scaleY(1)
-    }
-    20.41% {
+    0%,
+    20.41%,
+    51.25%,
+    100% {
         transform: scaleY(1)
     }
     22.5% {
         transform: scaleY(0.8)
-    }
-    51.25% {
-        transform: scaleY(1)
-    }
-    100% {
-        transform: scaleY(1)
     }
 }
 @keyframes face-happy {
     22.9% {
         opacity: 1;
     }
-    23% {
-        opacity: 0;  
-    }
-    51% {
+    23%,
+    51%  {
         opacity: 0;  
     }
     51.51% {
@@ -804,12 +756,9 @@ body {
         transform: scaleY(1);
     }
 }
-
 @keyframes face-tense {
-    0% {
-        opacity: 0;
-    }
-    22.9% {
+    0%,
+    22.9%  {
         opacity: 0;
     }
     23% {
@@ -826,28 +775,21 @@ body {
     51% {
         opacity: 1;  
     }
-    51.51% {
+    51.51%,
+    100% {
         opacity: 0;  
     }
-    100% {
-        opacity: 0;
-    }
 }
-
 @keyframes eyes-tense {
-    0% {
-        transform: translate(0, 0);
-    }
+    0%,
     26.6% {
         transform: translate(0, 0);
     }
     27.08% {
         transform: translate(-5px, 12px);
     }
-    27.56% {
-        transform: translate(7px, 15px);
-    }
-    28% {
+    27.56%,
+    28%  {
         transform: translate(7px, 15px);
     }
     28.6% {
@@ -920,78 +862,48 @@ body {
         transform: translate(-3px, 20px);
     }
 }
-
 @keyframes blush {
-    0% {
-        opacity: 0;
-    }
-    34% {
+    0%,
+    34%,
+    70%, 
+    100%  {
         opacity: 0;
     }
     47% {
         opacity: 1;
     }
-    70%, 100% {
-        opacity: 0;
-    }
 }
-
 @keyframes shaking {
-    0% {
-        transform: translateX(0)
-    }
-    35% {
+    0%,
+    35%,
+    36.6%,
+    37.5%,
+    39%,
+    40%,
+    42%,
+    43.5%,
+    44.6%,
+    45.6%,
+    48% {
         transform: translateX(0)
     }
     35.4% {
         transform: translateX(-5px)
     }
-    36.6% {
-        transform: translateX(0)
-    }
     37% {
         transform: translateX(5px)
-    }
-    37.5% {
-        transform: translateX(0)
-    }
-
-    39% {
-        transform: translateX(0)
     }
     39.6% {
         transform: translateX(-5px)
     }
-    40% {
-        transform: translateX(0)
-    }
     41.5% {
         transform: translateX(5px)
-    }
-    42% {
-        transform: translateX(0)
-    }
-
-
-    43.5% {
-        transform: translateX(0)
     }
     44% {
         transform: translateX(-5px)
     }
-    44.6% {
-        transform: translateX(0)
-    }
     45% {
         transform: translateX(5px)
-    }
-    45.6% {
-        transform: translateX(0)
-    }
-
-
-    48% {
-        transform: translateX(0)
     }
     48.5% {
         transform: translateX(-5px)
@@ -1046,7 +958,6 @@ body {
     }
 
 }
-
 @keyframes switch {
     0% {
         transform: scaleY(1);
@@ -1085,7 +996,6 @@ body {
         transform: scaleY(1);
     }
 }
-
 @keyframes handler {
     0% {
         transform: scaleY(1) translateY(0)
@@ -1132,7 +1042,6 @@ body {
         transform: translateY(-50px) scaleY(1)
     }
 }
-
 @keyframes bread-heart {
     0%,
     54%, 
